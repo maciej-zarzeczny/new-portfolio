@@ -1,0 +1,26 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+section.bottomBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: $bottom-bar-height;
+
+  .infoWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .infoNumber {
+    @include header-text;
+    padding-right: 10px;
+  }
+
+  .infoText {
+    @include text(color("gray"));
+
+    text-transform: uppercase;
+    margin-right: 100px;
+  }
+}

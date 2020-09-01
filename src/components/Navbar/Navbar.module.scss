@@ -1,0 +1,67 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
+
+nav.navWrapper {
+  background-color: color("background-light");
+  height: $navbar-height;
+
+  .navContent {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menuItem {
+    @include menu-item;
+
+    display: inline-block;
+    padding: 0 15px;
+    transition: all 0.3s ease-in-out;
+
+    &::before {
+      content: "<";
+      padding: 0 10px;
+      color: color("background-light");
+      transition: all 0.3s ease-in-out;
+    }
+
+    &::after {
+      content: ">";
+      padding: 0 10px;
+      color: color("background-light");
+      transition: all 0.3s ease-in-out;
+    }
+
+    &.iconItem::after,
+    &.iconItem::before {
+      content: "";
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    &:hover {
+      color: color("accent");
+
+      &::after,
+      &::before {
+        color: color("accent");
+      }
+    }
+
+    &.isActive {
+      color: color("accent");
+
+      &::after,
+      &::before {
+        color: color("accent");
+      }
+    }
+  }
+}

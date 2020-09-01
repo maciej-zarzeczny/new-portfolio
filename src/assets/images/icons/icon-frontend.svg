@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.007" height="19.509" viewBox="0 0 30.007 19.509">
+  <g id="Group_1" data-name="Group 1" transform="translate(-889 -1392.245)">
+    <g id="Icon_ionic-ios-code" data-name="Icon ionic-ios-code" transform="translate(882.5 1384.086)">
+      <path id="Path_92" data-name="Path 92" d="M23.344,10.034a.436.436,0,0,0-.288-.12.423.423,0,0,0-.288.12l-.97.928a.409.409,0,0,0,0,.6L28.533,18,21.8,24.434a.409.409,0,0,0,0,.6l.97.928a.423.423,0,0,0,.288.12.41.41,0,0,0,.288-.12l8.03-7.664a.409.409,0,0,0,0-.6Z" transform="translate(5)" fill="#098dec"/>
+      <path id="Path_93" data-name="Path 93" d="M14.344,11.264a.416.416,0,0,0-.134-.3l-.97-.928a.436.436,0,0,0-.288-.12.423.423,0,0,0-.288.12L4.634,17.7a.409.409,0,0,0,0,.6l8.03,7.664a.436.436,0,0,0,.288.12.41.41,0,0,0,.288-.12l.97-.928a.409.409,0,0,0,0-.6L7.474,18l6.736-6.434A.416.416,0,0,0,14.344,11.264Z" transform="translate(2)" fill="#098dec"/>
+    </g>
+    <line id="Line_1" data-name="Line 1" x1="5" y2="19" transform="translate(901.5 1392.5)" fill="none" stroke="#098dec" stroke-width="2"/>
+  </g>
+</svg>

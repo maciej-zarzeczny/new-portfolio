@@ -1,8 +1,16 @@
 import React from "react";
 import "./App.scss";
 
+import { Navbar } from "./components/Navbar/Navbar";
+import { HomePage } from "./components/HomePage/HomePage";
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Navbar />
+      <HomePage />
+    </div>
+  );
 }
 
 export default App;

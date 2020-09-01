@@ -1,0 +1,25 @@
+$theme-colors: (
+  "background-dark": #25272a,
+  "background-light": #2c2f32,
+  "accent": #098dec,
+  "gray": #959494,
+  "white": #fff,
+);
+
+@function color($key) {
+  @return map-get($map: $theme-colors, $key: $key);
+}
+
+$font-sizes: (
+  "header": 50px,
+  "title": 24px,
+  "menu": 20px,
+  "text": 16px,
+);
+
+@function font-size($key) {
+  @return map-get($map: $font-sizes, $key: $key);
+}
+
+$navbar-height: 100px;
+$bottom-bar-height: 100px;

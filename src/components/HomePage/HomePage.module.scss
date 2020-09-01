@@ -1,0 +1,28 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
+
+section.page {
+  background-color: color("background-light");
+  min-height: calc(100vh - #{$navbar-height} - #{$bottom-bar-height});
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(100vh - #{$navbar-height} - #{$bottom-bar-height});
+
+    .title {
+      @include title(color("accent"));
+      margin-bottom: 10px;
+    }
+
+    .headerText {
+      @include header-text;
+    }
+
+    .learnMoreBtn {
+      @include button(color("background-light"));
+      margin-top: 50px;
+    }
+  }
+}

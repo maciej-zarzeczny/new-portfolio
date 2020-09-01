@@ -1,0 +1,59 @@
+@import "./variables";
+
+// Texts
+@mixin header-text {
+  font-size: font-size("header");
+  font-size: 700;
+  color: color("white");
+  margin: 0;
+  padding: 0;
+
+  @content;
+}
+
+@mixin menu-item {
+  font-size: font-size("menu");
+  font-weight: 300;
+  color: color("white");
+  cursor: pointer;
+
+  @content;
+}
+
+@mixin title($color) {
+  font-size: font-size("title");
+  font-weight: 400;
+  color: $color;
+
+  @content;
+}
+
+@mixin text($color) {
+  font-size: font-size("text");
+  font-weight: 300;
+  color: $color;
+
+  @content;
+}
+
+//Components
+@mixin button($color) {
+  background-color: color("accent");
+  font-size: font-size("text");
+  font-weight: 400;
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+  border: 2px solid color("accent");
+  outline: none;
+  cursor: pointer;
+  color: $color;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border: 2px solid color("accent");
+    color: color("accent");
+    background-color: transparent;
+  }
+
+  @content;
+}
