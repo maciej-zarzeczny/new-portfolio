@@ -1,0 +1,57 @@
+@import "../../assets/styles/variables";
+
+:global(.cursor) {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid color("accent");
+  position: absolute;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  pointer-events: none;
+
+  transition: background-color 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+
+  &--clicked {
+    animation: click-animation 0.5s;
+  }
+
+  &--link-hovered {
+    background-color: color("accent");
+    transform: scale(1.5);
+  }
+}
+
+:global(.cursor::after) {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  //   background-color: color("accent");
+  border: 4px solid color("accent");
+  opacity: 0.5;
+  top: -4px;
+  left: -4px;
+
+  animation: cursor-animation 0.5s infinite alternate;
+}
+
+@keyframes cursor-animation {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes click-animation {
+  from {
+    transform: scale(2.5);
+  }
+  to {
+    translate: scale(1);
+  }
+}

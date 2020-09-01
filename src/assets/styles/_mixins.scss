@@ -15,7 +15,6 @@
   font-size: font-size("menu");
   font-weight: 300;
   color: color("white");
-  cursor: pointer;
 
   @content;
 }
@@ -45,7 +44,6 @@
   border-radius: 3px;
   border: 2px solid color("accent");
   outline: none;
-  cursor: pointer;
   color: $color;
   transition: all 0.3s ease-in-out;
 
