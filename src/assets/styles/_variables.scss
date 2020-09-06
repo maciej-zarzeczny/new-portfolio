@@ -15,6 +15,11 @@ $font-sizes: (
   "title": 24px,
   "menu": 20px,
   "text": 16px,
+  "header-mobile": 24px,
+  "title-mobile": 18px,
+  "subtitle": 16px,
+  "text-mobile": 14px,
+  "menu-item-mobile": 14px,
 );
 
 @function font-size($key) {
@@ -22,4 +27,5 @@ $font-sizes: (
 }
 
 $navbar-height: 100px;
+$minimized-navbar-height: 75px;
 $bottom-bar-height: 100px;

@@ -1,10 +1,11 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import classNames from "classnames";
 
-import styles from "./Cursor.module.scss";
+import "./Cursor.module.scss";
 
 export const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [hidden, setHidden] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [linkHovered, setLinkHovered] = useState(false);
 
@@ -21,6 +22,14 @@ export const Cursor = () => {
     setPosition({ x: e.pageX - 10, y: e.pageY - 10 });
   };
 
+  const onMouseEnter = () => {
+    setHidden(false);
+  };
+
+  const onMouseLeave = () => {
+    setHidden(true);
+  };
+
   const handleLinkHoverEvents = useCallback(() => {
     document.querySelectorAll("a, button, li").forEach((el) => {
       el.addEventListener("mouseover", () => setLinkHovered(true));
@@ -29,11 +38,15 @@ export const Cursor = () => {
   }, []);
 
   const addEventListeners = useCallback(() => {
+    document.addEventListener("mouseenter", onMouseEnter);
+    document.addEventListener("mouseleave", onMouseLeave);
     document.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mousedown", onMouseDown);
   }, []);
 
   const removeEventListeners = useCallback(() => {
+    document.removeEventListener("mouseenter", onMouseEnter);
+    document.removeEventListener("mouseleave", onMouseLeave);
     document.removeEventListener("mousemove", onMouseMove);
     document.removeEventListener("mousedown", onMouseDown);
   }, []);
@@ -46,6 +59,7 @@ export const Cursor = () => {
   }, [handleLinkHoverEvents, addEventListeners, removeEventListeners]);
 
   const cursorClasses = classNames("cursor", {
+    "cursor--hidden": hidden,
     "cursor--clicked": clicked,
     "cursor--link-hovered": linkHovered,
   });

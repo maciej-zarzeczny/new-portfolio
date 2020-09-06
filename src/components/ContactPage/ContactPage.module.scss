@@ -1,0 +1,61 @@
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
+
+.page {
+  background-image: url("../../assets/images/bg-contact-page.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .pageContent {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .subtitle {
+    @include text(color("gray"));
+    font-weight: 400;
+  }
+
+  .title {
+    @include header-text;
+    margin: 20px 0 30px 0;
+  }
+
+  .contactData {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 30px;
+
+    img {
+      margin-right: 20px;
+    }
+
+    p {
+      @include text(color("gray"));
+      font-weight: 400;
+    }
+  }
+
+  .illustration {
+    min-width: 40%;
+    height: auto;
+  }
+}
+
+@include tablet() {
+  .page {
+    .pageContent {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .illustration {
+      width: 100%;
+    }
+  }
+}

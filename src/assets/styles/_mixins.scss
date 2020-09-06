@@ -8,6 +8,10 @@
   margin: 0;
   padding: 0;
 
+  @include tablet() {
+    font-size: font-size("header-mobile");
+  }
+
   @content;
 }
 
@@ -15,6 +19,10 @@
   font-size: font-size("menu");
   font-weight: 300;
   color: color("white");
+
+  @include tablet() {
+    font-size: font-size("menu-item-mobile");
+  }
 
   @content;
 }
@@ -24,6 +32,10 @@
   font-weight: 400;
   color: $color;
 
+  @include tablet() {
+    font-size: font-size("title-mobile");
+  }
+
   @content;
 }
 
@@ -31,6 +43,10 @@
   font-size: font-size("text");
   font-weight: 300;
   color: $color;
+
+  @include tablet() {
+    font-size: font-size("text-mobile");
+  }
 
   @content;
 }
@@ -53,5 +69,47 @@
     background-color: transparent;
   }
 
+  @include tablet() {
+    font-size: font-size("text-mobile");
+    border: 1px solid color("accent");
+  }
+
+  @include mobile() {
+    font-size: font-size("text-mobile");
+    border: 1px solid color("accent");
+  }
+
   @content;
+}
+
+@mixin outline-button($color) {
+  background-color: $color;
+  font-size: font-size("text");
+  font-weight: 400;
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+  border: 2px solid color("accent");
+  outline: none;
+  color: color("accent");
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: $color;
+    background-color: color("accent");
+  }
+
+  @content;
+}
+
+// MEDIA QUERIES
+@mixin tablet {
+  @media only screen and (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 640px) {
+    @content;
+  }
 }

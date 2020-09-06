@@ -3,26 +3,66 @@
 
 section.page {
   background-color: color("background-light");
-  min-height: calc(100vh - #{$navbar-height} - #{$bottom-bar-height});
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-height: calc(100vh - #{$navbar-height} - #{$bottom-bar-height});
+  }
 
-    .title {
-      @include title(color("accent"));
-      margin-bottom: 10px;
+  .mobileHeader {
+    display: none;
+    min-height: calc(100vh - #{$navbar-height} - #{$bottom-bar-height});
+  }
+
+  .title {
+    @include title(color("accent"));
+    margin-bottom: 10px;
+  }
+
+  .headerText {
+    @include header-text;
+  }
+
+  .learnMoreBtn {
+    @include button(color("background-light"));
+    margin-top: 50px;
+  }
+}
+
+.illustration {
+  :global(#skills) {
+    transform-box: fill-box;
+    transform-origin: center center;
+    animation: illustration-animation 20s infinite linear;
+  }
+}
+
+@keyframes illustration-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@include tablet() {
+  section.page {
+    .header {
+      display: none;
     }
 
-    .headerText {
-      @include header-text;
+    .mobileHeader {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
     }
 
-    .learnMoreBtn {
-      @include button(color("background-light"));
-      margin-top: 50px;
+    .illustration {
+      width: 100%;
+      height: auto;
     }
   }
 }

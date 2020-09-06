@@ -1,0 +1,39 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.page {
+  background-image: url("../../assets/images/bg-projects-page.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding-top: 100px;
+
+  .pageContent {
+    min-height: 100vh;
+  }
+
+  .title {
+    @include text(color("gray"));
+
+    font-weight: 400;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(490px, 1fr));
+    gap: 10px;
+    justify-items: stretch;
+
+    margin-top: 50px;
+  }
+}
+
+@include tablet() {
+  .page {
+    background-image: url("../../assets/images/bg-mobile-projects-page.svg");
+
+    .projects {
+      display: block;
+    }
+  }
+}

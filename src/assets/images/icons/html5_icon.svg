@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="451" height="512" viewBox="0 0 451 512">
+  <g id="html5_icon" transform="translate(-30)">
+    <path id="Path_110" data-name="Path 110" d="M71,460,30,0H481L440,460,255,512" fill="#e34f26"/>
+    <path id="Path_111" data-name="Path 111" d="M256,472l149-41L440,37H256" fill="#ef652a"/>
+    <path id="Path_112" data-name="Path 112" d="M256,208H181l-5-58h80V94H114l1,15,14,156H256Zm0,147h-1l-63-17-4-45H132l7,89,116,32h1Z" fill="#ebebeb"/>
+    <path id="Path_113" data-name="Path 113" d="M255,208v57h70l-7,73-63,17v59l116-32,1-10,13-149,2-15Zm0-114v56H392l1-12,3-29,1-15Z" fill="#fff"/>
+  </g>
+</svg>

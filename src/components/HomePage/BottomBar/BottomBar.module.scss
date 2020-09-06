@@ -10,6 +10,15 @@ section.bottomBar {
   .infoWrapper {
     display: flex;
     align-items: center;
+    margin-right: 100px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    @include tablet() {
+      margin-right: 30px;
+    }
   }
 
   .infoNumber {
@@ -21,6 +30,5 @@ section.bottomBar {
     @include text(color("gray"));
 
     text-transform: uppercase;
-    margin-right: 100px;
   }
 }

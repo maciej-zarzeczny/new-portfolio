@@ -1,0 +1,58 @@
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
+
+.page {
+  background-image: url("../../assets/images/bg-skills-page.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .pageContent {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skills {
+    margin-right: 120px;
+  }
+
+  header {
+    .subtitle {
+      @include text(color("gray"));
+      font-weight: 400;
+    }
+
+    .title {
+      @include header-text;
+      margin: 20px 0;
+    }
+  }
+
+  .content {
+    @include text(color("gray"));
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .seeProjectsBtn {
+    @include button(color("background-dark"));
+
+    margin-top: 50px;
+  }
+}
+
+@include tablet() {
+  .page {
+    background-image: url("../../assets/images/bg-mobile-skills-page.svg");
+
+    .introduction {
+      display: none;
+    }
+
+    .skills {
+      margin-right: 0;
+    }
+  }
+}

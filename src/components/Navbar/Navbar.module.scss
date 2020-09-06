@@ -1,21 +1,63 @@
 @import "../../assets/styles/variables";
 @import "../../assets/styles/mixins";
 
-nav.navWrapper {
-  background-color: color("background-light");
+.navWrapper {
+  position: sticky;
+  top: 0;
+  width: 100vw;
   height: $navbar-height;
 
-  .navContent {
-    height: 100%;
+  background-color: color("background-light");
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+
+  &.isMinimized {
+    height: $minimized-navbar-height;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+}
+
+.navContent {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialMenu {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+
+  .iconItem {
+    @include menu-item;
+    padding: 0 15px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: color("accent");
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
+
+  .menuItem {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
   }
 
-  .menuItem {
+  .menuItemIcon {
+    display: none;
+  }
+
+  .link {
     @include menu-item;
 
-    display: inline-block;
     padding: 0 15px;
     transition: all 0.3s ease-in-out;
 
@@ -31,11 +73,6 @@ nav.navWrapper {
       padding: 0 10px;
       color: color("background-light");
       transition: all 0.3s ease-in-out;
-    }
-
-    &.iconItem::after,
-    &.iconItem::before {
-      content: "";
     }
 
     &:first-of-type {
@@ -61,6 +98,40 @@ nav.navWrapper {
       &::after,
       &::before {
         color: color("accent");
+      }
+    }
+  }
+}
+
+// Mobile menu
+@include tablet() {
+  .navWrapper {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    height: $minimized-navbar-height;
+    border-top: 1px solid color("accent");
+  }
+
+  .socialMenu {
+    display: none;
+  }
+
+  .menu {
+    justify-content: space-evenly;
+
+    .menuItemIcon {
+      display: inherit;
+      color: color("white");
+      font-size: font-size("title");
+    }
+
+    .link {
+      &::after {
+        content: "";
+      }
+      &::before {
+        content: "";
       }
     }
   }

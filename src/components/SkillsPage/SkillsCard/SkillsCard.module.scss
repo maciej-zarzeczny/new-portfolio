@@ -1,0 +1,58 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.skillsCard {
+  min-width: 600px;
+  padding: 50px;
+  background-color: color("background-light");
+  border-radius: 3px;
+  margin-bottom: 10px;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    color: color("white");
+
+    &.isActive {
+      color: color("accent");
+    }
+
+    h3 {
+      @include title(color("white"));
+
+      &.isActive {
+        @include title(color("accent"));
+      }
+    }
+  }
+
+  .skillsContainer {
+    margin-top: 30px;
+
+    .skill {
+      @include text(color("white"));
+
+      display: inline-block;
+      border: 1px solid color("white");
+      border-radius: 3px;
+      padding: 0.25rem 0.75rem;
+      margin: 5px 10px 5px 0;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@include tablet() {
+  .skillsCard {
+    min-width: 0;
+  }
+}

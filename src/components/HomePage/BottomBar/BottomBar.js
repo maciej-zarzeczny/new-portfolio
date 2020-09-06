@@ -4,7 +4,7 @@ import styles from "./BottomBar.module.scss";
 
 export const BottomBar = () => {
   return (
-    <section className={`${styles.bottomBar} container`}>
+    <section className={`${styles.bottomBar}`}>
       <div className={styles.infoWrapper}>
         <h1 className={styles.infoNumber}>2+</h1>
         <p className={styles.infoText}>
